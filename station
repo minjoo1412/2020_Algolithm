@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int solution(int n, vector<int> stations, int w)
+{
+    int answer = 0;
+    int array = 1;
+    int OxO = 0;
+    
+    while(array <= n){
+        if(stations[OxO] - w <= array && stations[OxO] + w >= array){
+            array = stations[OxO] + w + 1;
+            OxO++;
+        }else{
+            array += 2*w + 1;
+            answer++;
+        }
+    }
+    
+    // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
+
+    return answer;
+}
